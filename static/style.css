@@ -1,0 +1,284 @@
+body {
+    background: linear-gradient(45deg, #B09DBE, #2A2131);
+  }
+
+  .boombox {
+    background: #D7D7D7;
+    border-radius: 10px;
+    height: 200px;
+    margin: 35vh auto 0;
+    position: relative;
+    width: 440px;
+  }
+
+  .boombox.on {
+    animation-name: wobble;
+    animation-duration: 400ms;
+    transform-origin: 70% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .boombox.on .speaker-left,
+  .boombox.on .speaker-right {
+    animation-name: speaker-on;
+    animation-duration: 400ms;
+    transform-origin: 70% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .boombox.on:after {
+    color: #F0CF65;
+    text-shadow: 0 0 10px #F0CF65;
+  }
+
+  .boombox.on .bars li:nth-child(3) span {
+    animation-delay: 0.8s;
+    background: #688DB6;
+  }
+
+  .boombox.on .bars li:nth-child(4) span {
+    animation-delay: 0.4s;
+    background: #688DB6;
+  }
+
+  .boombox.on .bars li:nth-child(5) span {
+    animation-duration: 0.6s;
+    background: #688DB6;
+  }
+
+  .boombox.on .bars li:nth-child(1) span {
+    animation-delay: 0.3s;
+    background: #688DB6;
+  }
+
+  .boombox.on .bars li:nth-child(2) span {
+    animation-duration: 0.7s;
+    background: #688DB6;
+  }
+
+  .boombox.on .bars span {
+    animation: bars 400ms linear infinite alternate;
+  }
+
+  .boombox.on .buttons-right li {
+    background: #F0CF65;
+    box-shadow: 0 0 10px 0 #F0CF65, inset 0 0 0 1px lighten(#F0CF65, 20%);
+  }
+
+  .boombox.on .buttons-right li:hover {
+    background: #F0CF65;
+  }
+
+  .boombox.on .dial:before {
+    transform: rotate(45deg);
+  }
+
+  .boombox:after {
+    content: 'BOOMBOX';
+    position: absolute;
+    top: 65px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-family: "helvetica neue", arial;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #D7D7D7;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    text-shadow: none;
+  }
+
+  .boombox [class*="speaker"] {
+    background: lighten(#404040, 5%);
+    box-shadow: inset 0 0 0 13px #383838, inset 0 0 0 20px #404040;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+  }
+
+  .boombox .speaker-left {
+    left: 30px;
+  }
+
+  .boombox .speaker-right {
+    right: 30px;
+  }
+
+
+  .handle {
+    position: relative;
+    background: #404040;
+    background: -webkit-linear-gradient(#ffffff, #CCC);
+    height: 15px;
+    width: 90%;
+    top: -40px;
+    left: 5%;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .handle:before,
+  .handle:after {
+    content: '';
+    display: block;
+    height: 45px;
+    width: 15px;
+    top: 15px;
+    background: #404040;
+    background: -webkit-linear-gradient(#CCC, #ffffff);
+    position: absolute;
+  }
+
+  .handle:after {
+    right: 0;
+  }
+
+  .controls {
+    background: -webkit-linear-gradient(#CCC, #ffffff);
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+  }
+
+  .controls .dial {
+    width: 24px;
+    height: 24px;
+    box-shadow: inset 0 0 0 2px darken(#CACACA, 10%);
+    float: left;
+    border-radius: 50%;
+    margin: 8px 0 0 8px;
+    position: relative;
+    background: #CACACA;
+  }
+
+  .controls .dial:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #909090;
+    width: 2px;
+    height: 10px;
+    top: 3px;
+    left: 50%;
+    margin-left: -1px;
+    transform: rotate(-90deg);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .controls .buttons {
+    float: left;
+    margin: 10px 0 10px 10px;
+  }
+
+  .controls .buttons-right {
+    float: right;
+    margin: 10px 10px;
+  }
+
+  .controls .buttons-right li {
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    font-family: "helvetica neue", arial;
+    color: white;
+    background: #606060;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    width: 34px;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .controls .buttons-right li:hover {
+    background: #707070;
+  }
+
+  .controls ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .controls ul li {
+    min-width: 14px;
+    height: 20px;
+    width: 15px;
+    background: #CACACA;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .controls ul li span {
+    border-radius: 3px 0 0 3px;
+  }
+
+  .tape {
+    width: 80px;
+    height: 50px;
+    background: #CCC;
+    border-radius: 6px;
+    position: absolute;
+    top: 94px;
+    left: 50%;
+    margin-left: -40px;
+  }
+
+  .bars {
+    float: left;
+    margin: 10px 0 0 143px;
+    padding: 0;
+  }
+
+  .bars li {
+    position: relative;
+    height: 40px;
+    margin: 0;
+    width: 15px;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .bars li span {
+    display: block;
+    width: 15px;
+    position: absolute;
+    border-radius: 3px 0 0 3px;
+    bottom: 0;
+    background: #CCC;
+  }
+
+  @keyframes bars {
+    0% {
+      height: 5px;
+    }
+
+    100% {
+      height: 22px;
+    }
+  }
+
+  @keyframes speaker-on {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes wobble  {
+    0%  { -webkit-transform:  rotate(0deg); }
+    20%  { -webkit-transform:  rotate(1deg); }
+    50%  { -webkit-transform:  rotate(-1deg); }
+    100%  { -webkit-transform:  rotate(0deg); }
+  }
